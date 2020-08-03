@@ -2,5 +2,7 @@
     "name": "gh640/phpspreadsheet-examples",
     "type": "project",
     "license": "MIT",
-    "require": {}
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.14"
+    }
 }

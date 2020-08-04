@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/app
+    tmpfs:
+      - /tmp
+      - /var/tmp

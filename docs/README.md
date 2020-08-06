@@ -5,6 +5,8 @@ Composer パッケージ `phpoffice/phpspreadsheet` の使用サンプルです�
 - [GitHub - PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 - [PhpSpreadsheet Documentation](https://phpspreadsheet.readthedocs.io/en/latest/)
 
+`phpoffice/phpspreadsheet` の `1.x` を使用しています。
+
 すぐにコードを試せるように Docker の設定を同梱しています。
 
 ## 準備

@@ -1,3 +1,5 @@
+FROM composer:2 AS composer
+
 FROM php:7.3-cli
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -8,7 +10,6 @@ RUN apt-get update && \
     apt-get install -y \
       g++ libbz2-dev libfreetype6-dev libicu-dev libmcrypt-dev libxml2-dev \
       libzip-dev zlib1g-dev locales wget && \
-    apt-get autoclean && \
     rm -rf /var/lib/apt/lists/* && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ && \
     docker-php-ext-configure zip --with-libzip && \
@@ -22,6 +23,4 @@ ENV LANG="ja_JP.UTF-8" \
     COMPOSER_NO_INTERACTION=1 \
     PATH="/root/.composer/vendor/bin:$PATH"
 
-COPY docker/install-composer.sh /tmp/
-RUN . /tmp/install-composer.sh
-
+COPY --from=composer /usr/bin/composer /usr/bin/composer
